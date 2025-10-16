@@ -1,0 +1,15 @@
+mld:
+  container_name: postgres-mld
+  db_name: postgres
+  db_user: postgres
+  db_password: postgres
+  db_port: 5432
+  volume_path: ~/Dev/multiledgers/multiledgers-track-2.0/.cache/pgdata
+
+conecta:
+  container_name: postgres-conecta
+  db_name: conecta_database
+  db_user: conecta_user
+  db_password: postgres
+  db_port: 5432
+  volume_path: ~/Dev/consolidados/projects/conecta-compras/server/.cache/pgdata

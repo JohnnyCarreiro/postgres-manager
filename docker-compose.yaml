@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: bitnamilegacy/postgresql:17
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - POSTGRESQL_USERNAME=${DB_USER}
+      - POSTGRESQL_PASSWORD=${DB_PASSWORD}
+      - POSTGRESQL_DATABASE=${DB_NAME}
+      - POSTGRESQL_PORT_NUMBER=5432
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - ${VOLUME_PATH}:/bitnami/postgresql
+    deploy:
+      resources:
+        limits:
+          cpus: "0.4"
+          memory: 512M
+        reservations:
+          cpus: "0.1"
+          memory: 256M
+    # healthcheck:
+    #   test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 5
