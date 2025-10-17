@@ -4,7 +4,7 @@ mld:
   db_user: postgres
   db_password: postgres
   db_port: 5432
-  volume_path: ~/Dev/multiledgers/multiledgers-track-2.0/.cache/pgdata
+  volume_path: ~/Dev/consolidados/clients/multiledgers/multiledgers-track-2.0/.cache/pgdata
 
 conecta:
   container_name: postgres-conecta
